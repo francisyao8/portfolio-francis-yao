@@ -1,0 +1,202 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 18px 0;
+  transition: all .35s ease;
+
+  &.scrolled {
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 2px 24px rgba(15,31,92,.1);
+    padding: 12px 0;
+
+    .nav-logo .logo-text { color: var(--navy); }
+    .nav-link { color: var(--text); }
+  }
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+// Logo
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  .logo-initials {
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, var(--orange), var(--orange-hot));
+    color: white;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--white);
+    transition: color .3s;
+
+    strong {
+      font-weight: 700;
+      color: var(--orange);
+    }
+  }
+}
+
+// Links
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+
+  @media (max-width: 900px) { display: none; }
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.8);
+  padding: 8px 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all .25s;
+  position: relative;
+
+  &:hover {
+    color: var(--white);
+    background: rgba(255,255,255,.12);
+  }
+
+  &.active {
+    color: var(--orange);
+    background: var(--orange-pale);
+    font-weight: 600;
+  }
+}
+
+// CTA
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange);
+  color: white !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: all .25s;
+  flex-shrink: 0;
+
+  &:hover {
+    background: var(--orange-hot);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-orange);
+  }
+
+  @media (max-width: 900px) { display: none; }
+}
+
+// Hamburger
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+
+  @media (max-width: 900px) { display: flex; }
+
+  span {
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--white);
+    border-radius: 4px;
+    transition: all .3s;
+  }
+
+  &.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); background: var(--orange); }
+  &.open span:nth-child(2) { opacity: 0; }
+  &.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); background: var(--orange); }
+}
+
+// Scrolled hamburger
+.scrolled .hamburger span { background: var(--navy); }
+
+// Mobile Menu
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--navy);
+  z-index: 999;
+  padding: 100px 32px 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all .4s cubic-bezier(.77,0,.18,1);
+
+  &.open {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  ul {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 40px;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: rgba(255,255,255,.8);
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 14px 8px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    cursor: pointer;
+    transition: color .2s;
+
+    i { color: var(--orange); font-size: 1rem; }
+
+    &:hover { color: white; }
+  }
+}
+
+.mobile-dl { width: 100%; justify-content: center; }

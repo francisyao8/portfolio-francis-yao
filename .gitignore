@@ -1,0 +1,38 @@
+# Dépendances
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build Angular
+dist/
+tmp/
+out-tsc/
+bazel-out/
+
+# Cache
+.angular/
+.cache/
+.sass-cache/
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environnement (ne jamais commit les secrets)
+src/environments/environment.prod.ts.local
+
+# Tests
+coverage/

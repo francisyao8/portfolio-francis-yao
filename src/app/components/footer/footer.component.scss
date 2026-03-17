@@ -1,0 +1,170 @@
+.footer {
+  background: var(--navy);
+  color: rgba(255,255,255,.75);
+}
+
+.footer-top { padding: 80px 0 60px; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px;
+
+  @media (max-width: 1024px) { grid-template-columns: 1fr 1fr; gap: 36px; }
+  @media (max-width: 640px)  { grid-template-columns: 1fr; gap: 32px; }
+}
+
+// Brand
+.footer-brand {
+  p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,.5);
+    margin: 20px 0 24px;
+    max-width: 280px;
+  }
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .logo-initials {
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, var(--orange), var(--orange-hot));
+    color: white;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+  }
+
+  .logo-text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: rgba(255,255,255,.8);
+
+    strong { color: var(--orange); font-weight: 700; }
+  }
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.social-link {
+  width: 40px; height: 40px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,.6);
+  font-size: 1rem;
+  transition: all .25s;
+
+  &:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: white;
+    transform: translateY(-2px);
+  }
+}
+
+// Links
+.footer-links, .footer-stack, .footer-contact {
+  h4 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: rgba(255,255,255,.4);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  li a {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,.65);
+    transition: color .2s;
+
+    &:hover { color: var(--orange); }
+  }
+}
+
+// Stack chips
+.stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  span {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    color: rgba(255,255,255,.7);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 50px;
+    transition: all .2s;
+
+    &:hover {
+      background: rgba(242,110,35,.2);
+      border-color: rgba(242,110,35,.4);
+      color: var(--orange);
+    }
+  }
+}
+
+// Contact
+.contact-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,.6);
+
+    i { color: var(--orange); font-size: 0.8rem; }
+  }
+}
+
+.footer-dl {
+  font-size: 0.85rem;
+  padding: 10px 20px;
+}
+
+// Bottom bar
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 20px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  p {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,.35);
+
+    strong { color: var(--orange); }
+  }
+}
